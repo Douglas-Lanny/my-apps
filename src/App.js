@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import {Item, Item2}  from './item';
-import {Comentario} from './componentes/componentes-funcionales';
-import Inicio from './componentes/Paginas/Inicio';
+import Header from './componentes/Header'
+import Footer from './componentes/Footer'
+import Main from './componentes/Paginas/Main'
 
 const miFunction = (valor) => {
   return valor*2
@@ -11,9 +11,9 @@ const miFunction = (valor) => {
 function App() {
   return (
     <div className="App">
-      <Comentario nombre="hola"/>
-      <Comentario />
-      <Inicio multiplicar={miFunction}/>
+      <Header nombre = "Mi Aplicación"/>
+      <Main />
+      <Footer />
     </div>
   );
 }

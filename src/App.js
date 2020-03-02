@@ -5,10 +5,11 @@ import Footer from './componentes/Footer'
 import Main from './componentes/Paginas/Main'
 
 
+
 function App() {
   return (
     <div className="App">
-      <Header nombre = "Mi Aplicación"/>
+      <Header nombre = "Mi Aplicación" date={Date(Date.now())}/>
       <Main />
       <Footer />
     </div>

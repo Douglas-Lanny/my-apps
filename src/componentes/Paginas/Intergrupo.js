@@ -10,7 +10,7 @@ export class Intergrupo extends Component {
         this.state = {
             nombre: 'comienzo',
             mensaje:'',
-            respuesta:''
+            res: []
         }
 
         this.consumirApi = this.consumirApi.bind(this);
@@ -19,8 +19,9 @@ export class Intergrupo extends Component {
     async consumirApi (){
         try{
             var respuesta = await Api.get("https://pokeapi.co/api/v2/pokemon");
-        this.setState({mensaje: 'consumo exitos', respuesta: respuesta
-    })
+        this.setState({mensaje: 'consumo exitos', res : [...this.state.res,respuesta.data.results]});
+       
+        
         }catch(error){
             this.setState({mensaje: 'consumo fallo'})
         }
@@ -32,7 +33,7 @@ export class Intergrupo extends Component {
        return (
            <div>
                <Componente1 nombre={this.state.nombre} myFunction={this.consumirApi} />
-                <Componente2 mensaje={this.state.mensaje}/>
+                <Componente2 mensaje={this.state.mensaje} respuesta = {this.state.res}/>
            </div>
         );
 

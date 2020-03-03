@@ -54,7 +54,15 @@ export function Componente2(props) {
     return (
         <div className="alert">
             <label>{props.mensaje}</label>
-            <label></label>
+            <ul>
+                {
+                    props.respuesta.map(
+                        (item,i) => {
+                            console.log(item[0]);
+                        return <li>{item[1].name}</li>}
+                    )
+                }
+            </ul>
         </div>
     );
 }

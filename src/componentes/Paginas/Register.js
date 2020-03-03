@@ -42,7 +42,7 @@ class Register extends Component {
             nombre: this.state.nombre,
             imagen: ""
         }
-        this.setState({registros: this.state.registros.push(item)})
+        this.setState({registros: [...this.state.registros, item]})
 
     }
     render() {
@@ -54,12 +54,12 @@ class Register extends Component {
                 <button onClick={this.consumirApi} className="btn btn-prymari">Consumir Api</button>
                 <form>
                     <div className="form-group">
-                        <label for="correo">Email address</label>
+                        <label >Email address</label>
                         <input type="email" onChange={this.llenarCampo} className="form-control" id="correo" aria-describedby="emailHelp" />
 
                     </div>
                     <div className="form-group">
-                        <label for="nombre">Password</label>
+                        <label >Password</label>
                         <input type="password" onChange={this.llenarCampo}className="form-control" id="nombre" />
                     </div>
                     <button onClick={this.nuevoItem} type="submit" className="btn btn-primary">Guardar</button>

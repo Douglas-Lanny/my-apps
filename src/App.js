@@ -7,9 +7,10 @@ import Main from './componentes/Paginas/Main'
 
 
 function App() {
+  var options = { year: "numeric", month: "long", day: "numeric"};
   return (
     <div className="App">
-      <Header nombre = "Mi Aplicación" date={Date(Date.now())}/>
+      <Header nombre = "Mi Aplicación" fecha={new Date(Date.now()).toLocaleDateString("es-Co", options)}/>
       <Main />
       <Footer />
     </div>

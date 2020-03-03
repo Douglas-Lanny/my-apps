@@ -60,12 +60,12 @@ export function Componente2(props) {
     return (
         <div className="alert">
             <label>{props.mensaje}</label>
-            <ul>
+            <ul className="list-group">
                 {
                     props.respuesta.map(
                         (item,i) => {
                         return (
-                        <li>{item.name}</li>)}
+                        <li className="list-group-item">{item.name}</li>)}
                     )
                 }
             </ul>

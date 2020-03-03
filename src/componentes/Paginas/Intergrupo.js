@@ -19,8 +19,7 @@ export class Intergrupo extends Component {
     async consumirApi (){
         try{
             var respuesta = await Api.get("https://pokeapi.co/api/v2/pokemon");
-        this.setState({mensaje: 'consumo exitos', res : [...this.state.res,respuesta.data.results]});
-       
+        this.setState({mensaje: 'consumo exitos', res : [...respuesta.data.results]});
         
         }catch(error){
             this.setState({mensaje: 'consumo fallo'})
@@ -31,9 +30,9 @@ export class Intergrupo extends Component {
     render(){
 
        return (
-           <div>
-               <Componente1 nombre={this.state.nombre} myFunction={this.consumirApi} />
-                <Componente2 mensaje={this.state.mensaje} respuesta = {this.state.res}/>
+           <div className="container" >
+                <Componente1 nombre={this.state.nombre} myFunction={this.consumirApi} />
+               <Componente2 mensaje={this.state.mensaje} respuesta = {this.state.res}/>
            </div>
         );
 

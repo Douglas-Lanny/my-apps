@@ -44,8 +44,14 @@ export function Componente1(props){
 
      return (
          <div className="buscar-elemento">
-             <label>Componente 1</label>
-                <button onClick={props.myFunction}>{props.nombre} </button>
+             <div className="alert">
+             <label>Pokemon</label>
+             </div>
+             <div>
+             <button className="btn btn-primary" onClick={props.myFunction}>{props.nombre} </button>
+             </div>
+             
+                
          </div>
      );
 }
@@ -58,8 +64,8 @@ export function Componente2(props) {
                 {
                     props.respuesta.map(
                         (item,i) => {
-                            console.log(item[0]);
-                        return <li>{item[1].name}</li>}
+                        return (
+                        <li>{item.name}</li>)}
                     )
                 }
             </ul>
